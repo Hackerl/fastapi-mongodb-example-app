@@ -1,0 +1,2 @@
+DATABASE = 'vm'
+MACHINE_COLLECTION = 'machine'
