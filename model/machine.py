@@ -1,6 +1,6 @@
-from model import CommonModel
+from model import MongoDBModel
 
 
-class Machine(CommonModel):
+class Machine(MongoDBModel):
     cpu: int
     memory: int
