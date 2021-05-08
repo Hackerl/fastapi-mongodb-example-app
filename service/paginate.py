@@ -1,5 +1,5 @@
 import math
-from typing import TypeVar, Generic, Type
+from typing import TypeVar, Generic, Type, List, Tuple, Any, Mapping
 
 from model.response import Page
 
@@ -11,7 +11,13 @@ class MongoDBPage(Generic[T]):
         self._collection = collection
         self._constructor = constructor
 
-    async def paginate(self, page=1, page_size=100, filter_=None, sort=None) -> Page[T]:
+    async def paginate(
+            self,
+            page: int = 1,
+            page_size: int = 100,
+            filter_: Mapping[str, Any] = None,
+            sort: List[Tuple] = None
+    ) -> Page[T]:
         if filter_ is None:
             filter_ = {}
 
